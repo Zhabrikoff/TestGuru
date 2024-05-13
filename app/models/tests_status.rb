@@ -1,0 +1,2 @@
+class TestsStatus < ApplicationRecord
+end
