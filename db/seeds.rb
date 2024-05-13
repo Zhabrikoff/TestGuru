@@ -29,14 +29,20 @@ questions = Question.create([
                               { body: 'What is Ruby on Rails?', test_id: tests[1].id }
                             ])
 
-answers = Answer.create([
-                          { body: 'Interactive Ruby Shell', correct: true, question_id: questions[0].id },
-                          { body: 'Integrated Routing and Bridging', correct: false, question_id: questions[0].id },
-                          { body: 'number.to_s', correct: true, question_id: questions[1].id },
-                          { body: 'number.to_i', correct: false, question_id: questions[1].id },
-                          { body: 'Yukihiro Matsumoto', correct: true, question_id: questions[2].id },
-                          { body: 'Linus Benedict Torvalds', correct: false, question_id: questions[2].id },
-                          { body: 'It is a framework used to create web applications', correct: true,
-                            question_id: questions[3].id },
-                          { body: 'Library for working with time', correct: false, question_id: questions[3].id }
-                        ])
+Answer.create([
+                { body: 'Interactive Ruby Shell', correct: true, question_id: questions[0].id },
+                { body: 'Integrated Routing and Bridging', correct: false, question_id: questions[0].id },
+                { body: 'number.to_s', correct: true, question_id: questions[1].id },
+                { body: 'number.to_i', correct: false, question_id: questions[1].id },
+                { body: 'Yukihiro Matsumoto', correct: true, question_id: questions[2].id },
+                { body: 'Linus Benedict Torvalds', correct: false, question_id: questions[2].id },
+                { body: 'It is a framework used to create web applications', correct: true,
+                  question_id: questions[3].id },
+                { body: 'Library for working with time', correct: false, question_id: questions[3].id }
+              ])
+
+TestsStatus.create([
+                     { status: 'In progress', user_id: users[0].id, test_id: tests[1].id },
+                     { status: 'Completed', user_id: users[0].id, test_id: tests[0].id },
+                     { status: 'Completed', user_id: users[1].id, test_id: tests[1].id }
+                   ])
