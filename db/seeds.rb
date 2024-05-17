@@ -17,9 +17,11 @@ categories = Category.create([
                              ])
 
 tests = Test.create([
-                      { title: 'Ruby Basics', level: 0, category_id: categories[0].id },
-                      { title: 'Ruby on Rails Basics', level: 1, category_id: categories[1].id },
-                      { title: 'Ruby on Rails advanced', level: 2, category_id: categories[1].id }
+                      { title: 'Ruby Basics', level: 0, category_id: categories[0].id, author_id: users[0].id },
+                      { title: 'Ruby on Rails Basics', level: 1, category_id: categories[1].id,
+                        author_id: users[1].id },
+                      { title: 'Ruby on Rails advanced', level: 2, category_id: categories[1].id,
+                        author_id: users[1].id }
                     ])
 
 questions = Question.create([
