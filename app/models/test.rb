@@ -6,10 +6,16 @@ class Test < ApplicationRecord
   has_many :tests_statuses
   has_many :users, through: :tests_statuses
 
+  validates :title, presence: true, uniqueness: { scope: :level }
+
+  validates :level, numericality: { only_integer: true, greater_than: 0 }
+
+  scope :simple, -> { where(level: 0..1) }
+  scope :medium, -> { where(level: 2..4) }
+  scope :difficult, -> { where(level: 5..Float::INFINITY) }
+  scope :by_category, ->(category_name) { joins(:category).where(categories: { title: category_name }) }
+
   def self.sorting_tests_by_category(category_name)
-    Test.joins('JOIN categories ON tests.category_id = categories.id')
-        .where(categories: { title: category_name })
-        .order(title: :desc)
-        .pluck(:title)
+    by_category(category_name).order(title: :desc).pluck(:title)
   end
 end
