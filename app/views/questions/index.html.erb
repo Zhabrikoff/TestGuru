@@ -1,0 +1,15 @@
+<h1>Test: <%= @test.title %></h1>
+
+<h2>Questions</h2>
+
+<table>
+  <tr>
+    <th>Title</th>
+  </tr>
+
+  <% @test.questions.each do |question| %>
+    <tr>
+      <td><%= question.body %></td>
+    </tr>
+  <% end %>
+</table>
