@@ -6,9 +6,7 @@ class QuestionsController < ApplicationController
 
   def index; end
 
-  def show
-    @question
-  end
+  def show; end
 
   def new
     @question = @test.questions.new
