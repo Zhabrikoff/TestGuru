@@ -43,8 +43,7 @@ Answer.create([
                 { body: 'Library for working with time', correct: false, question_id: questions[3].id }
               ])
 
-TestsStatus.create([
-                     { status: 'In progress', user_id: users[0].id, test_id: tests[1].id },
-                     { status: 'Completed', user_id: users[0].id, test_id: tests[0].id },
-                     { status: 'Completed', user_id: users[1].id, test_id: tests[1].id }
+TestPassage.create([
+                     { user_id: users[0].id, test_id: tests[0].id, current_question_id: questions[0].id,
+                       correct_questions: 0 }
                    ])

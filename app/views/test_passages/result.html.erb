@@ -1,0 +1,12 @@
+<%= turbo_page_requires_reload %>
+<h1>The <%= @test_passage.test.title %> Test was Completed!</h1>
+
+<p>
+  <% if @test_passage.test_successful? %>
+    <span style="color: #099f00;">Test passed successfully</span>
+  <% else %>
+     <span style="color: #ff0000;">Test failed</span>
+  <% end %>
+</p>
+
+<%= link_to "Main page", tests_path %>
