@@ -12,8 +12,21 @@
   </head>
 
   <body>
+    <% if logged_in? %>
+      <div class="nav">
+        <div>
+          <%= link_to "TestGuru", root_path %>
+        </div>
+        <div class="right_content">
+          <div class="user">Welcome, <b><%= current_user.name %></b> Guru</div>
+          <%= link_to "Logout", logout_path %>
+        </div>
+      </div>
+    <% end %>
+
     <%= yield %>
-     <footer>
+
+    <footer>
       <p>
         <%= current_year %> <%= github_url("Zhabrikoff", "TestGuru") %> - Учебный проект в онлайн-школе <a href="https://thinknetica.com" target="_blank">Thinknetica</a>
       </p>
