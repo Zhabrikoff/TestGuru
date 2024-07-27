@@ -1,6 +1,6 @@
 <h1><%= question_header(@question) %></h1>
 
-<%= form_with model: [@test, @question], local: true, data: { turbo: false } do |form| %>
+<%= form_with model: [:admin, @test, @question], local: true, data: { turbo: false } do |form| %>
   <%= render "shared/errors", resource: @question %>
 
   <p>
@@ -11,4 +11,4 @@
   <p><%= form.submit %></p>
 <% end %>
 
-<%= link_to "Back", test_path(@question.test) %>
+<%= link_to "Back", admin_test_path(@question.test) %>
