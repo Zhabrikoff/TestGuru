@@ -1,0 +1,75 @@
+ru:
+  back_button: "Назад"
+  main_page_button: "На главную"
+
+  activerecord:
+    models:
+      test: "Тест"
+    
+    attributes:
+      test:
+        title: "Название"
+        level: "Уровень"
+        category: "Категория"
+
+    errors:
+      messages:
+          blank: "не может быть пустым"
+          required: "не может быть пустой"
+          greater_than: "должен быть больше 0"
+
+  helpers:
+    submit:
+      test: 
+        create: "Создать тест"
+    label:
+      test:
+        title: "Заголовок"
+        level: "Уровень"
+        category_id: "Категория"
+    select:
+      prompt: "Выберите пожалуйста"
+  
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+
+  tests: 
+    index:
+      title: "Тесты"
+
+  admin:
+    tests:
+      index:
+        title: "Тесты"
+        new_test: "Создать тест"
+        test_name: "Название"
+        test_level: "Уровень"
+        number_of_questions: "Количество вопросов"
+        actions: "Действия"
+      new:
+        title: "Новый тест"
+      show:
+        main_title: "Тест: %{main_title}"
+        level: "Уровень: %{level}"
+        questions: "Впоросы"
+        question_title: "Название"
+        question_actions: "Дейсвтия"
+        add_question_button: "Добавить вопрос"
+      test:
+        show: "Показать"
+  
+  devise:
+    sessions:
+      new:
+        title: "Встаньте на путь Гуру"
+        enter: "Ввести"
+    registrations:
+      new:
+        first_name: "Имя"
+        last_name: "Фамилия"
+        

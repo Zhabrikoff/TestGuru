@@ -30,4 +30,75 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  back_button: "Back"
+  main_page_button: "Main page"
+
+  activerecord:
+    models:
+      test: "Test"
+
+    attributes:
+      test:
+        title: "Title"
+        level: "Level"
+        category: "Category"
+
+    errors:
+      messages:
+          blank: "must exist"
+          required: "can't be blank"
+          greater_than: "must be greater than 0"
+
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+    label:
+      test:
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+    select:
+      prompt: "Please select"
+  
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
+  tests: 
+    index:
+      title: "Tests"
+
+  admin:
+    tests:
+      index:
+        title: "Tests"
+        new_test: "Create test"
+        test_name: "Name"
+        test_level: "Level"
+        number_of_questions: "Number of questions"
+        actions: "Actions"
+      new:
+        title: "New test"
+      show:
+        main_title: "Test: %{main_title}"
+        level: "Test level: %{level}"
+        questions: "Questions"
+        question_title: "Title"
+        question_actions: "Actions"
+        add_question_button: "Add question"
+      test:
+        show: "Show"
+
+  devise:
+    sessions:
+      new:
+        title: "Enter the Guru Gates"
+        enter: "Enter"
+    registrations:
+      new:
+        first_name: "First name"
+        last_name: "Last name"
+
