@@ -101,4 +101,7 @@ en:
       new:
         first_name: "First name"
         last_name: "Last name"
-
+  
+  services:
+    gist_question:
+      description: "A question about %{title} from TestGuru"

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  root 'tests#index'
+  root "tests#index"
 
   devise_for :users, path: :gurus, path_names: { sign_in: :login, sign_out: :logout }
 
@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :test_passages, only: %i[update show] do
     member do
       get :result
+      post :gist
     end
   end
 
@@ -23,5 +24,7 @@ Rails.application.routes.draw do
         resources :answers, shallow: true, except: :index
       end
     end
+
+    resources :gists, only: :index
   end
 end

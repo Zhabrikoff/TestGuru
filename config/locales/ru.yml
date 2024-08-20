@@ -72,4 +72,7 @@ ru:
       new:
         first_name: "Имя"
         last_name: "Фамилия"
-        
+
+  services:
+    gist_question:
+      description: "Вопрос о %{title} от TestGuru"        
