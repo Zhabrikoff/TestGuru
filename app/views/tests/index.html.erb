@@ -1,12 +1,20 @@
 <h1><%= t(".title") %></h1>
 
-<table class="table table-striped">
-  <tr class="table-secondary">
-    <th>Name</th>
-    <th>Level</th>
-    <th>Number of questions</th>
-    <th>Actions</th>
-  </tr>
+<table class="table">
+  <thead>
+    <tr class="table-secondary">
+      <th class="sort-by-title pointer">
+        Name
+        <%= octicon "arrow-up", class: "text-succes hide" %>
+        <%= octicon "arrow-down", class: "text-succes hide" %>
+      </th>
+      <th>Level</th>
+      <th>Number of questions</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
 
-  <%= render @tests %>
+  <tbody>
+    <%= render @tests %>
+  </tbody>
 </table>
