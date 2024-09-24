@@ -9,6 +9,6 @@ class Answer < ApplicationRecord
   private
 
   def validate_answers_count
-    errors.add(:question, 'There can be from 1 to 4 answers') if question.answers.count == 4
+    errors.add(:question, "There can be from 1 to 4 answers") if question.answers.count == 4
   end
 end
