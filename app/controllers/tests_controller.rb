@@ -2,7 +2,9 @@ class TestsController < ApplicationController
   before_action :find_test, only: %i[start]
 
   def index
-    @tests = Test.all
+    @tests = Test.joins(:questions)
+      .group("tests.id")
+      .having("COUNT(questions.id) > 0")
   end
 
   def start
