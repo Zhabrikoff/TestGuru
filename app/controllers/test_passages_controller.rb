@@ -1,7 +1,12 @@
 class TestPassagesController < ApplicationController
   before_action :find_test_passage, only: %i[show result update]
 
-  def show; end
+  def show
+    if @test_passage.test.questions.empty? || @test_passage.current_question.answers.empty?
+      flash[:alert] = "You cannot continue taking the test because it is not ready yet."
+      redirect_to tests_path
+    end
+  end
 
   def result; end
 
