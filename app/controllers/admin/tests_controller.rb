@@ -1,6 +1,6 @@
 class Admin::TestsController < Admin::BaseController
   before_action :find_tests, only: %i[index update_inline]
-  before_action :find_test, only: %i[show destroy update_inline]
+  before_action :find_test, only: %i[show destroy update_inline update_status]
 
   def index; end
 
@@ -34,6 +34,15 @@ class Admin::TestsController < Admin::BaseController
     else
       render :index
     end
+  end
+
+  def update_status
+    if @test.update(status: !@test.status)
+      flash[:notice] = "Status updated"
+    else
+      flash[:alert] = "Something went wrong"
+    end
+    redirect_to admin_tests_path
   end
 
   private
