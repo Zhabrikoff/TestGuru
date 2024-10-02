@@ -1,7 +1,7 @@
 class TestPassage < ApplicationRecord
   belongs_to :user
   belongs_to :test
-  belongs_to :current_question, class_name: 'Question', optional: true
+  belongs_to :current_question, class_name: "Question", optional: true
 
   before_validation :before_validation_set_current_question, on: %i[create update]
 
@@ -20,6 +20,10 @@ class TestPassage < ApplicationRecord
     (correct_questions.to_f / test.questions.count * 100).round(2) >= MINIMUM_SUCCESS_PERCENTAGE
   end
 
+  def time_left
+    (test.timer * 60) - (Time.current - created_at).to_i
+  end
+
   private
 
   def before_validation_set_current_question
@@ -31,7 +35,7 @@ class TestPassage < ApplicationRecord
   end
 
   def next_question
-    test.questions.order(:id).where('id > ?', current_question.id).first
+    test.questions.order(:id).where("id > ?", current_question.id).first
   end
 
   def correct_answer?(answer_ids)

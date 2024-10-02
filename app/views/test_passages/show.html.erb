@@ -3,6 +3,15 @@
 
   <b><%= @test_passage.current_question.body %></b>
 
+  <p>Time for test: <span class="testTime"><%= @test_passage.test.timer %></span> min</p>
+  <p>
+    <span class="timeLeft" 
+          data-test-end-time="<%= Time.current.to_i + @test_passage.time_left %>"
+          data-redirect-url="<%= result_test_passage_path(@test_passage) %>">
+     </span>
+     time left
+  </p>
+
   <p>Question number <%= @test_passage.test.questions.index(@test_passage.current_question) + 1 %> / <%= @test_passage.test.questions.count %></p>
 
   <%= content_tag :div,
