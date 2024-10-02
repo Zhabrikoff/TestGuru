@@ -5,6 +5,7 @@
   </td>
   <td class="align-middle"><%= test.level %></td>
   <td class="align-middle"><%= test.questions.count %></td>
+  <td class="align-middle"><%= test.timer %></td>
   <td>
     <%= button_to test.status ? "Mark as not ready" : "Mark as ready",
                   update_status_admin_test_path(test),
