@@ -24,6 +24,10 @@ class TestPassage < ApplicationRecord
     (test.timer * 60) - (Time.current - created_at).to_i
   end
 
+  def time_is_up?
+    time_left <= 0
+  end
+
   private
 
   def before_validation_set_current_question

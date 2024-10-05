@@ -1,4 +1,4 @@
-const updateTimer = (timeLeftElement) => {
+const updateTimer = (timeLeftElement, form) => {
   const endTime = parseInt(timeLeftElement.dataset.testEndTime, 10);
 
   const countdown = setInterval(() => {
@@ -7,7 +7,7 @@ const updateTimer = (timeLeftElement) => {
 
     if (timeLeft <= 0) {
       clearInterval(countdown);
-      window.location.href = timeLeftElement.dataset.redirectUrl;
+      form.submit();
     } else {
       timeLeftElement.textContent = `${Math.floor(timeLeft / 60)}:${timeLeft % 60 < 10 ? '0' : ''}${timeLeft % 60}`;
     }
@@ -16,16 +16,18 @@ const updateTimer = (timeLeftElement) => {
 
 document.addEventListener('turbo:load', () => {
   const timeLeftElement = document.querySelector('.timeLeft');
+  const form = document.querySelector('.testFrom');
 
-  if (timeLeftElement) {
-    updateTimer(timeLeftElement);
+  if (timeLeftElement && form) {
+    updateTimer(timeLeftElement, form);
   }
 });
 
 document.addEventListener('turbo:frame-load', () => {
   const timeLeftElement = document.querySelector('.timeLeft');
+  const form = document.querySelector('.testFrom');
 
-  if (timeLeftElement) {
+  if (timeLeftElement && form) {
     updateTimer(timeLeftElement);
   }
 });
