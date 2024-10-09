@@ -5,6 +5,8 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_current_question, on: %i[create update]
 
+  before_update :set_successful, if: :completed?
+
   MINIMUM_SUCCESS_PERCENTAGE = 85
 
   def completed?
@@ -48,5 +50,9 @@ class TestPassage < ApplicationRecord
 
   def correct_answers
     current_question.answers.correct
+  end
+
+  def set_successful
+    self.successful = test_successful?
   end
 end
